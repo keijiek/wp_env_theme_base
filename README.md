@@ -96,7 +96,7 @@ npm -D install @wordpress/env
 - @wordpress/env が依存する多数のパッケージ群が、`node_modules`内にインストールされる。
 - package.json の devDependencies オブジェクト下に、下記のように `@wordpress/env` の項目が追加される。devDependencies オブジェクトが無い場合、それが作成されたうえで追加される。
 
-```json
+```jsonc
 {
   // ↓ 追加(存在しなかった場合)
   "devDependencies": {
