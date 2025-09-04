@@ -94,13 +94,11 @@ npm -D install @wordpress/env
 
 - カレントディレクトリに `node_modules` というディレクトリが作成され、`node_modules/@wordpress/env` にパッケージがインストールされる。
 - @wordpress/env が依存する多数のパッケージ群が、`node_modules`内にインストールされる。
-- package.json の devDependencies オブジェクト下に、下記のように `@wordpress/env` の項目が追加される。devDependencies オブジェクトが無い場合、それが作成されたうえで追加される。
+- package.json の devDependencies オブジェクト下に、下記のように `@wordpress/env` のパッケージ名とバージョンが追加される。
 
-```jsonc
+```json
 {
-  // ↓ 追加(存在しなかった場合)
   "devDependencies": {
-    // ↓ 追加
     "@wordpress/env": "^10.30.0"
   }
 }
@@ -207,14 +205,13 @@ wp-scripts 導入のメリットは、第一に、上記の wp-env と併用す�
 npm i -D @wordpress/scripts
 ```
 
-すると、package.json の "devDependencies" に、パッケージが追加される。
+すると、package.json の "devDependencies" に、@wordpress/scripts のパッケージ名とバージョンが追加される。
 
 ```json
 {
   "devDependencies": {
     "@wordpress/env": "^10.30.0",
     "@wordpress/scripts": "^30.23.0"
-    // ↑ 追加されている
   }
 }
 ```
