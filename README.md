@@ -275,3 +275,37 @@ npx wp-env run cli bash
 ```
 
 ---
+
+## 5. その他のパッケージの導入
+
+### 5.1. Bootstrap
+
+- [https://getbootstrap.jp/](https://getbootstrap.jp/)
+
+```bash
+npm i -D sass
+npm i bootstrap @popperjs/core
+```
+
+src ディレクトリを参考に、ファイルを用意。
+
+エントリーポイントが src/index.js で、そこで scss ファイルがすべて import されるようにする必要がある。
+
+例えば、bootstrap カスタマイズ用の scss は、styles.scss において、次のように import されているとする。
+
+```scss
+@import "./custom_variables";
+@import "bootstrap/scss/bootstrap";
+@import "./custom_utilities";
+```
+
+
+その場合、その1ファイルのみを、index.js から import していればよい。ｌ
+
+```js
+import "./bootstrap/styles.scss";
+
+window.addEventListener("DOMContentLoaded", (e) => {
+  // Initialize any JavaScript functionality here
+});
+```

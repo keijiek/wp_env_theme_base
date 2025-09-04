@@ -5,6 +5,11 @@
   },
   "devDependencies": {
     "@wordpress/env": "^10.30.0",
-    "@wordpress/scripts": "^30.23.0"
+    "@wordpress/scripts": "^30.23.0",
+    "sass": "^1.92.0"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.8"
   }
 }
