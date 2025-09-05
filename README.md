@@ -268,17 +268,69 @@ npm run start
 
 次のコマンドで、WordPress本体がインストールされているコンテナ内の **/var/www/html/** (wp-contentやwp-includeが存在するディレクトリ)に、シェルでログインする。
 
-エラーログ(wp-content/)を見たり、不要な初期テーマを一掃したり、その他、シェルでなければできないことを行う。
+エラーログ(wp-content/debug.log)を見たり、wp cli を使った操作を行ったりするために。
 
 ```bash
+# /var/www/html/ 直下にログイン
 npx wp-env run cli bash
+
+# コンテナの外側から、コンテナ内のコマンドを打つ
+npx wp-env run cli コマンド
+
+# debug.log 監視
+tail -F /var/www/html/wp-content/debug.log
+less +F /var/www/html/wp-content/debug.log
+
+# アクティブなテーマを除きすべてのテーマを削除
+wp theme activate テーマのスラグ(プロジェクトのフォルダ名)
+wp theme delete --all
+
+# コンテナの外側からテーマを切り替えてその他を消す
+npx wp-env run cli wp theme activate テーマのスラグ(プロジェクトのフォルダ名)
+npx wp-env run cli wp theme delete --all
 ```
 
 ---
 
-## 5. その他のパッケージの導入
+## 5. その他のファイル、ディレクトリ
 
-### 5.1. Bootstrap
+### 5.1. .gitignore
+
+まだ .gitignore が無い場合、gitignore.io を利用して .gitignore の作成。
+
+[gitignore.io](https://www.gitignore.io)
+
+```bash
+# node と vscode を使った wordpress 用テーマを作成するプロジェクトのための gitignore を自動生成するコマンド
+curl -sSL "https://gitignore.io/api/visualstudiocode,node,wordpress" > .gitignore
+
+# git 管理開始
+git init
+```
+
+### 5.2. 基本のフォルダ構成を作成
+
+```bash
+tree --gitinogre
+
+.
+├── 404.php
+├── README.md
+├── footer.php
+├── functions.php
+├── header.php
+├── package-lock.json
+├── package.json
+├── src
+│   └── index.js
+└── style.css
+```
+
+
+
+### 5.3. Bootstrap
+
+もし導入するなら
 
 - [https://getbootstrap.jp/](https://getbootstrap.jp/)
 

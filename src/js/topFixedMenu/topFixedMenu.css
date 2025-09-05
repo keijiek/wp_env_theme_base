@@ -1,0 +1,16 @@
+/* 基本時のスタイル */
+.js_topFixedMenuPanel {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+}
+
+/* 活性時のスタイル */
+.js_topFixedMenuPanel.js_isActive {
+  display: block;
+  transition: transform 0.2s ease-in-out;
+  transform: translateY(0);
+}

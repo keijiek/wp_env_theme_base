@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,wordpress
-# Edit at https://www.toptal.com/developers/gitignore?templates=node,visualstudiocode,wordpress
+# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,node,wordpress
+# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,node,wordpress
 
 ### Node ###
 # Logs
@@ -148,7 +148,6 @@ dist
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
-!.vscode/sftp.sample.json
 
 # Local History for Visual Studio Code
 .history/
@@ -161,8 +160,49 @@ dist
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode
+### WordPress ###
+# Core
+#
+# Note: if you want to stage/commit WP core files
+# you can delete this whole section/until Configuration.
+/wp-admin/
+/wp-content/index.php
+/wp-content/languages
+/wp-content/plugins/index.php
+/wp-content/themes/index.php
+/wp-includes/
+/index.php
+/license.txt
+/readme.html
+/wp-*.php
+/xmlrpc.php
 
-# 除外する別モジュール
+# Configuration
+wp-config.php
 
-/assets/bootstrap
+# Example themes
+/wp-content/themes/twenty*/
+
+# Example plugin
+/wp-content/plugins/hello.php
+
+# Uploads
+/wp-content/uploads/
+
+# Log files
+
+# htaccess
+/.htaccess
+
+# All plugins
+# Note: If you wish to whitelist plugins,
+# uncomment the next line
+#/wp-content/plugins
+
+# All themes
+# Note: If you wish to whitelist themes,
+# uncomment the next line
+#/wp-content/themes
+
+
+# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,node,wordpress
